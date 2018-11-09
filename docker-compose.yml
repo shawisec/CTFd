@@ -2,6 +2,7 @@ version: '3'
 
 services:
   ctfd:
+    image: web
     build: .
     restart: always
     ports:
