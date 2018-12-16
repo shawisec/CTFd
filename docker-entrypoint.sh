@@ -27,6 +27,11 @@ fi
 
 # Initialize database
 python manage.py db upgrade
+if [ ! -f shawisec.zip ] ; then
+  python import.py shawisec.zip challenges,teams,both,metadata
+else
+  echo "NO data imported"
+fi
 
 if [ -z "$WORKERS" ]; then
     WORKERS=1
