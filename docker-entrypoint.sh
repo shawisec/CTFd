@@ -27,6 +27,11 @@ fi
 
 # Initialize database
 python manage.py db upgrade
+if [ ! -f shawisec.zip ] ; then
+  echo "NO data imported"
+else
+  python import.py shawisec.zip challenges
+fi
 
 if [ -z "$WORKERS" ]; then
     WORKERS=1
