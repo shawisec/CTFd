@@ -9,4 +9,5 @@ if [ ! -f shawisec.zip ] ; then
   echo "NO data imported"
 else
   python import.py shawisec.zip challenges
+  rm -f shawisec.zip #Importation une seule fois
 fi
